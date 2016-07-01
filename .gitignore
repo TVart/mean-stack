@@ -1,4 +1,2 @@
 .idea/*
-public/css/
-public/font/
-public/image/
+node_modules
