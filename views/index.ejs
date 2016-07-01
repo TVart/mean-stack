@@ -20,10 +20,15 @@
         <p>This is the sample of a tutorial on <a href="https://tva.rt">tvart</a></p>
         <a href="next" class="btn btn-primary btn-lg">View the Next Step</a>
     </div>
-    <div ng-controller="MainCtrl">
-        {{test}}
-        <ul ng-repeat="post in posts">
-            <li>{{post.title}} - upvotes: {{post.upvotes}}</li>
+    <div ng-controller="TodolistCtrl">
+        <%= clientId %> {{serverId}} {{todolist.length}}<br/>
+        <label for="task">Add new Task</label>
+        <form ng-submit="addTask()">
+            <input type="text" name="task" title="task" ng-model="taskName">
+            <button type="submit">Add</button>
+        </form>
+        <ul ng-repeat="list in todolist">
+            <li>{{list.title}} - priority: {{list.upvotes}}</li>
         </ul>
     </div>
 </div>

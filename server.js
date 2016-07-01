@@ -1,19 +1,45 @@
 var express = require('express');
-var app = express();
-var port = process.env.PORT || 8080;
 var path = require('path');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var tvlibs = require('./tvlibs');
 
-app.set('view engine', 'ejs');
+var app = express();
 
+var port = process.env.PORT || 8080;
+
+
+app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
+
+// load middlewares
+app.use(cookieParser());
+//app.use(bodyParser.json({
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+//app.use(express.static('uploads'));
+//app.use(express.static('files'));
 //app.use(express.static(__dirname + '/public'));
 //.use(express.favicon(__dirname+'/public/favicon.ico'));
 
+app.use(function(req,res,next){
+    //check session
+    next();
+});
 
 app.get('/', function (req, res) {
-    res.render('index');
-});
+    res.redirect('list')});
+
+app.get('/list', function (req, res) {
+    res.render('index',{clientId:"West Summer Set"});});
+
+app.post('/list/add', function (req, res) {
+    res.render('index');});
+
+app.put('/list/del/:id', function (req, res) {
+    res.render('index');});
 
 app.get('/test', function (req, res) {
     var amis=['Robert','Jacques','David'];
