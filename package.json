@@ -1,0 +1,21 @@
+{
+  "name": "stack-mean",
+  "version": "1.0.0",
+  "description": "lightwood mean stack project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "tvart",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "mongojs": "^2.4.0",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  }
+}
