@@ -8,8 +8,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.logger())
     //app.use(express.static(__dirname + '/public'));
-    .use(express.static(path.join(__dirname, 'public')))
-    .use(express.favicon(__dirname+'/public/favicon.ico'));
+    .use(express.static(path.join(__dirname, 'public')));
+    //.use(express.favicon(__dirname+'/public/favicon.ico'));
 
 
 app.get('/', function (req, res) {
