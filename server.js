@@ -33,11 +33,9 @@ app.get('/', function (req, res) {
     res.redirect('list')});
 
 app.get('/list', function (req, res) {
-
     res.render('index',{clientId:"West Summer Set"});});
 
-app.post('/list/add', function (req, res) {
-    res.render('index');});
+//app.post('/api/tasks', task.create);
 
 app.put('/list/del/:id', function (req, res) {
     res.render('index');});
