@@ -6,7 +6,7 @@
 
     <!-- CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <!--<link rel="stylesheet" href="css/style.css">-->
 
     <!-- JAVASCRIPT -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -25,12 +25,12 @@
     <div ng-controller="TodolistCtrl">
         <%= clientId %> {{serverId}} {{todolist.length}}<br/>
         <label for="task">Add new Task</label>
-        <form ng-submit="addTask()">
-            <input type="text" name="task" title="task" ng-model="taskName">
+        <form ng-submit="createTask()">
+            <input type="text" name="name" title="task" ng-model="name">
             <button type="submit">Add</button>
         </form>
         <ul ng-repeat="list in todolist">
-            <li>{{list.title}} - priority: {{list.upvotes}}</li>
+            <li>{{list.name}}</li>
         </ul>
     </div>
 </div>
