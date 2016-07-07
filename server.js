@@ -63,6 +63,8 @@ app.get('/tvlibs', function (req, res) {
     res.status(200).send(myRectangle);
 });
 
+app.delete('/api/v2/tasks/:id', tasksController.remove);
+app.get('/api/v2/tasks/:id', tasksController.getById);
 app.get('/api/v2/tasks', tasksController.list);
 app.post('/api/v2/tasks', tasksController.create);
 

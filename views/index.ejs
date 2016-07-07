@@ -30,7 +30,7 @@
             <button type="submit">Add</button>
         </form>
         <ul ng-repeat="list in todolist">
-            <li>{{list.name}}</li>
+            <li>{{list.name}} <button ng-click="removeTask(list._id)">remove</button></li>
         </ul>
     </div>
 </div>
