@@ -37,13 +37,16 @@ app.use(function(req,res,next){
 });
 
 app.get('/', function (req, res) {
-    res.render('index',{clientId:"West Summer Set"});
+    res.render('index',{
+        copyear:"2016",
+        clientId:"West Summer Set"
+    });
 });
 
-app.get('/test', function (req, res) {
+app.get('/apropos', function (req, res) {
     var amis=['Robert','Jacques','David'];
-    res.render('test',{
-        nom:"tvart",
+    res.render('apropos',{
+        nom: navigator.userAgent,
         age:32,
         amis:amis
     });

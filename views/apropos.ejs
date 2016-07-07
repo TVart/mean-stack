@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container" ng-app="stackMean">
+
+<header>
+    <% include ./partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>A Propos</h1>
+        <p>Vous êtes connecté depuis <%= nom %> votre age est <%= age %></p>
+        <p>Vous avez <%= (amis.length) %> amis</p>
+        <p><%
+            for(var i = 0 ; i < (amis.length) ; i++) {
+            %>
+            <%= (i+1) %> <%= amis[i] %><br/>
+            <%
+            }
+            %></p>
+    </div>
+</main>
+
+<footer>
+    <% include ./partials/footer %>
+</footer>
+
+</body>
+</html>

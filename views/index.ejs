@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Stack Mean</title>
-
-    <!-- CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link rel="stylesheet" href="css/style.css">-->
-
-    <!-- JAVASCRIPT -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
-
-    <script src="js/app.js"></script>
-
+    <% include ./partials/head %>
 </head>
-<body ng-app="stackMean">
-<div class="container">
+<body class="container" ng-app="stackMean">
+
+<header>
+    <% include ./partials/header %>
+</header>
+
+<main>
     <div class="jumbotron">
-        <h1>This Is Heroku Awesome!</h1>
-        <p>This is the sample of a tutorial on <a href="https://tva.rt">tvart</a></p>
-        <a href="next" class="btn btn-primary btn-lg">View the Next Step</a>
+        <h1>Hello You</h1>
+        <p>
+            Welcome to Todolist interface. Here you can create, delete and read your daily tasks :)<br/>
+            P.S. Don't forget to feed the cat!
+        </p>
     </div>
     <div ng-controller="TodolistCtrl">
         <%= clientId %> {{serverId}} {{todolist.length}}<br/>
@@ -33,7 +28,11 @@
             <li>{{list.name}} <button ng-click="removeTask(list._id)">remove</button></li>
         </ul>
     </div>
-</div>
+</main>
+
+<footer>
+    <% include ./partials/footer %>
+</footer>
 
 </body>
 </html>
