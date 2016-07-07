@@ -40,6 +40,8 @@ userSchema.pre('save', function(next) {
 taskSchema.methods.clean = function() {
     // strip html tags
     this.name = this.name.replace(/<\/?[^>]+(>|$)/g, "");
+    //this.name = this.name.replace(/<a\b[^>]*>(.*?)<\/a>/i,"");
+    //this.name = this.name.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
     return this.name;
 };
 
