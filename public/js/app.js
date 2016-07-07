@@ -22,6 +22,16 @@ app.factory('Task', ['$resource', function($resource) {
             taskObj.$delete();
         },
 
+        update : function (task) {
+            var taskClass = $resource("/api/v2/tasks/:id",{id:task.id},{
+                update: {
+                    method: 'PUT'
+                }
+            });
+            var taskObj = new taskClass;
+            taskObj.$update();
+        },
+
         create: function(taskName){
             myTask = new Task;
             myTask.name = taskName;

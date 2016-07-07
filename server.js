@@ -64,6 +64,7 @@ app.get('/tvlibs', function (req, res) {
 });
 
 app.delete('/api/v2/tasks/:id', tasksController.remove);
+app.put('/api/v2/tasks/:id', tasksController.update);
 app.get('/api/v2/tasks/:id', tasksController.getById);
 app.get('/api/v2/tasks', tasksController.list);
 app.post('/api/v2/tasks', tasksController.create);
