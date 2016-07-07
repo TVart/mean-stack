@@ -48,7 +48,14 @@ app.get('/apropos', function (req, res) {
     res.render('apropos',{
         nom: req.get('User-Agent'),
         age:32,
-        amis:amis
+        amis:amis,
+        api:[
+            { action: "list", verb:"GET", uri:"/api/tasks"},
+            { action: "show", verb:"GET", uri:"/api/tasks/:id"},
+            { action: "create", verb:"POST", uri:"/api/tasks"},
+            { action: "update", verb:"PUT", uri:"/api/tasks"},
+            { action: "remove", verb:"DELETE", uri:"/api/tasks"}
+        ]
     });
 });
 

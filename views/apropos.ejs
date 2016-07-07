@@ -12,6 +12,14 @@
 <main>
     <div class="jumbotron">
         <h1>A Propos</h1>
+
+        <h2>Utilisation Api</h2>
+        <ul>
+            <% api.forEach(function(a) { %>
+            <li><%= a.action %> - <%= a.verb %> - <%= a.uri %></li>
+            <% }); %>
+        </ul>
+
         <p>Vous êtes connecté depuis <%= nom %> votre age est <%= age %></p>
         <p>Vous avez <%= (amis.length) %> amis</p>
         <p><%
