@@ -46,7 +46,7 @@ app.get('/', function (req, res) {
 app.get('/apropos', function (req, res) {
     var amis=['Robert','Jacques','David'];
     res.render('apropos',{
-        nom: navigator.userAgent,
+        nom: req.get('User-Agent'),
         age:32,
         amis:amis
     });
