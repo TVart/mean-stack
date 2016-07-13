@@ -30,7 +30,6 @@ var tasks = [
 ];
 
 
-
 app.use(function(req,res,next){
     if(req.url.split('/')[1]=='api'){res.setHeader('Content-Type', 'application/json');}
     next();
